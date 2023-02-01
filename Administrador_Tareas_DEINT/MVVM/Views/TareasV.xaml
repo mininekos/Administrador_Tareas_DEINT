@@ -3,7 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Administrador_Tareas_DEINT.MVVM.Views.TareasV"
              Title="Mis tareas">
-    
-    
-    
+
+
+    <Grid RowDefinitions=".3*,.7*">
+        <VerticalStackLayout Grid.Row="0">
+            <Label
+                Text="CATEGORIAS"
+                />
+            <CollectionView
+            ItemsSource="{Binding Categorias}"
+            ItemTemplate="{StaticResource CategoriaStyle}"
+            >
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
+                </CollectionView.ItemsLayout>
+            </CollectionView>
+        </VerticalStackLayout>
+        
+    </Grid>
+
 </ContentPage>

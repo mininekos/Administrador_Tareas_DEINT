@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xaml-comp compile="true"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             >
+    
+
+    <DataTemplate x:Key="CategoriaStyle">
+        <Border Margin="10">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10"/>
+            </Border.StrokeShape>
+            <Grid>
+                <VerticalStackLayout
+                Padding="10">
+                    <Label
+                    Text="a"
+                    TextColor="Grey"
+                    />
+                    <Label
+                    Text="{Binding Nombre}"
+                    TextColor="Black"
+                    />
+                    <ProgressBar BackgroundColor="Red"
+                />
+                </VerticalStackLayout>
+            </Grid>
+        </Border>
+    </DataTemplate>
+</ResourceDictionary>

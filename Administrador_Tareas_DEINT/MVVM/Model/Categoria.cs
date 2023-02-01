@@ -13,5 +13,6 @@ namespace Administrador_Tareas_DEINT.MVVM.Model
 
         public string Nombre{ get; set; }
         public List<Tarea> Tareas{ get; set; }
+        public int Id { get; set; }
     }
 }

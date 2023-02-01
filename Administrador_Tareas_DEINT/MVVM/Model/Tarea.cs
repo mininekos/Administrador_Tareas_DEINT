@@ -12,6 +12,7 @@ namespace Administrador_Tareas_DEINT.MVVM.Model
     {
         public string Nombre { get; set; }
         public bool Acabada{ get; set; }
+        public int Id_Categoria { get; set; }
 
     }
 }
