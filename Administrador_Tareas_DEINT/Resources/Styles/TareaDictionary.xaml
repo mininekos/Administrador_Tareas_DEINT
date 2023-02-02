@@ -10,7 +10,7 @@
         <Setter Property="TextColor" Value="LightBlue"/>
     </Style>
     <Style Class="SubHeader" TargetType="Label">
-        <Setter Property="TextColor" Value="LightBlue"/>
+        <Setter Property="" Value=""/>
     </Style>
     
     <DataTemplate x:Key="CategoriaStyle">
