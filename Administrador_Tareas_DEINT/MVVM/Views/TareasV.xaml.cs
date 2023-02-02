@@ -10,9 +10,8 @@ public partial class TareasV : ContentPage
         BindingContext = new TareaVM();
 	}
 
-    private void btnPag2_Clicked(object sender, EventArgs e)
+    private void btnAgregarTarea_Clicked(object sender, EventArgs e)
     {
         Navigation.PushAsync(new AgregarTarea());
-        
     }
 }

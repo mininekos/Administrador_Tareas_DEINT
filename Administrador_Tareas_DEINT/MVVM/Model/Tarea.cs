@@ -10,7 +10,7 @@ namespace Administrador_Tareas_DEINT.MVVM.Model
     [AddINotifyPropertyChangedInterface]
     class Tarea
     {
-        public string Nombre { get; set; }
+        public string NombreTarea { get; set; }
         public bool Acabada{ get; set; }
         public int Id_Categoria { get; set; }
 

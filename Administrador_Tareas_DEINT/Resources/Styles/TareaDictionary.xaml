@@ -3,14 +3,24 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              >
+    <Style TargetType="ContentPage" x:Key="ContentPageStyle">
+        <Setter Property="BackgroundColor" Value="#f8faff"/>
+    </Style>
+    <Style Class="LightBlue" TargetType="Label">
+        <Setter Property="TextColor" Value="LightBlue"/>
+    </Style>
+    <Style Class="SubHeader" TargetType="Label">
+        <Setter Property="TextColor" Value="LightBlue"/>
+    </Style>
     
-
     <DataTemplate x:Key="CategoriaStyle">
         <Border Margin="10">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="10"/>
             </Border.StrokeShape>
-            <Grid>
+            <Grid
+                BackgroundColor="White"
+                >
                 <VerticalStackLayout
                 Padding="10">
                     <Label
@@ -18,13 +28,55 @@
                     TextColor="Grey"
                     />
                     <Label
-                    Text="{Binding Nombre}"
-                    TextColor="Black"
-                    />
+                        Text="{Binding Nombre}"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        />
                     <ProgressBar BackgroundColor="Red"
                 />
                 </VerticalStackLayout>
             </Grid>
         </Border>
     </DataTemplate>
+
+    <EllipseGeometry
+        x:Key="circulo"
+        Center="50,50"
+        RadiusX="30"
+        RadiusY="30"
+        />
+    <Style x:Key="btnCicular" TargetType="Button">
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="FontSize" Value="Large"/>
+        <Setter Property="HeightRequest" Value="100"/>
+        <Setter Property="WidthRequest" Value="100"/>
+        <Setter Property="VerticalOptions" Value="End"/>
+        <Setter Property="HorizontalOptions" Value="End"/>
+        <Setter Property="Clip" Value="{StaticResource circulo}"/>
+        <Setter Property="BackgroundColor" Value="#512bd4"/>
+        <Setter Property="TextColor" Value="White"/>
+    </Style>
+
+    <DataTemplate x:Key="TareasStyle">
+        <Frame BorderColor="Transparent">
+            <HorizontalStackLayout>
+                <CheckBox
+                    x:Name="checkBox"
+                    IsChecked="{Binding Acabada}"
+                    VerticalOptions="Center"
+                    />
+                <Label Text="{Binding NombreTarea}" VerticalOptions="Center">
+                    <Label.Triggers>
+                        <DataTrigger
+                            Binding="{Binding Source={x:Reference checkBox}, Path=IsChecked}"
+                            TargetType="Label"
+                            Value="True">
+                            <Setter Property="TextDecorations" Value="Strikethrough" />
+                        </DataTrigger>
+                    </Label.Triggers>
+                </Label>
+            </HorizontalStackLayout>
+        </Frame>
+    </DataTemplate>
+
 </ResourceDictionary>

@@ -34,27 +34,27 @@ namespace Administrador_Tareas_DEINT.MVVM.ViewModels
             Tareas = new ObservableCollection<Tarea>() {
 
                 new Tarea { 
-                    Nombre="Actualizar Fichero",
+                    NombreTarea="Actualizar Fichero",
                     Acabada=false,
                     Id_Categoria=0  
                 },
                 new Tarea {
-                    Nombre="Planear siguiente curso",
+                    NombreTarea="Planear siguiente curso",
                     Acabada=false,
                     Id_Categoria=0
                 },
                 new Tarea {
-                    Nombre="ASP.NET en YouTube",
+                    NombreTarea="ASP.NET en YouTube",
                     Acabada=false,
                     Id_Categoria=0
                 },
                 new Tarea {
-                    Nombre="XAML",
+                    NombreTarea="XAML",
                     Acabada=false,
                     Id_Categoria=0
                 },
                 new Tarea {
-                    Nombre="JavaScript",
+                    NombreTarea="JavaScript",
                     Acabada=false,
                     Id_Categoria=0
                 },

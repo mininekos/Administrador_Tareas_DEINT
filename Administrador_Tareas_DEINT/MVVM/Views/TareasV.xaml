@@ -2,13 +2,15 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Administrador_Tareas_DEINT.MVVM.Views.TareasV"
-             Title="Mis tareas">
+             Title="Mis tareas"
+             Style="{StaticResource ContentPageStyle}">
 
 
     <Grid RowDefinitions=".3*,.7*">
         <VerticalStackLayout Grid.Row="0">
             <Label
                 Text="CATEGORIAS"
+                
                 />
             <CollectionView
             ItemsSource="{Binding Categorias}"
@@ -19,7 +21,24 @@
                 </CollectionView.ItemsLayout>
             </CollectionView>
         </VerticalStackLayout>
-        
+        <Grid Grid.Row="2" RowDefinitions=".2*, .8*">
+            <Label StyleClass="LightBlue,SubHeader" Text="TAREAS PENDIENTES" />
+            <CollectionView 
+                Grid.Row="1" 
+                ItemsSource="{Binding Tareas}"
+                ItemsUpdatingScrollMode="KeepLastItemInView"
+                ItemTemplate="{StaticResource TareasStyle}"
+                >
+                
+            </CollectionView>
+        </Grid>
+        <Button
+            Grid.Row="2" 
+            x:Name="btnAgregarTarea"
+            Text="+"
+            Clicked="btnAgregarTarea_Clicked"
+            Style="{StaticResource btnCicular}"
+            />
     </Grid>
 
 </ContentPage>
