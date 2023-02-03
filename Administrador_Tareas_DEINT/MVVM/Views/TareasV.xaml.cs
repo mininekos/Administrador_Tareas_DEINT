@@ -15,7 +15,7 @@ public partial class TareasV : ContentPage
 
     private void btnAgregarTarea_Clicked(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new AgregarTarea());
+        Navigation.PushAsync(new AgregarTarea(tareaVM));
     }
     private void checkBox_CheckedChanged(object sender, EventArgs e)
     {

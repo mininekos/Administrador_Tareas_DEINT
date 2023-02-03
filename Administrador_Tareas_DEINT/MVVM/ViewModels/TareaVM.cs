@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Administrador_Tareas_DEINT.MVVM.ViewModels
 {
-    internal class TareaVM
+    public class TareaVM
     {
         public ObservableCollection<Categoria> Categorias { get; set; }
         public ObservableCollection<Tarea> Tareas { get; set; }
