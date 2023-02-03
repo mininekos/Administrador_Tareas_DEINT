@@ -10,7 +10,7 @@
         <Setter Property="TextColor" Value="LightBlue"/>
     </Style>
     <Style Class="SubHeader" TargetType="Label">
-        <Setter Property="" Value=""/>
+        <Setter Property="FontSize"  Value="Default"/>
     </Style>
     
     <DataTemplate x:Key="CategoriaStyle">
@@ -18,22 +18,13 @@
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="10"/>
             </Border.StrokeShape>
-            <Grid
-                BackgroundColor="White"
-                >
-                <VerticalStackLayout
-                Padding="10">
-                    <Label
-                    Text="a"
-                    TextColor="Grey"
-                    />
-                    <Label
-                        Text="{Binding Nombre}"
-                        TextColor="Black"
-                        FontAttributes="Bold"
-                        />
-                    <ProgressBar BackgroundColor="Red"
-                />
+            <Grid BackgroundColor="White">
+                <VerticalStackLayout Padding="10">
+                    <Label Text="{Binding ContadorSinAcabar, StringFormat='{0} tareas'}" TextColor="Grey"/>
+                    <Label Text="{Binding Nombre}" TextColor="Black" FontAttributes="Bold"/>
+                    <ProgressBar BackgroundColor="Black"
+                                 Progress="{Binding Progress}"
+                                 ProgressColor="Red"/>
                 </VerticalStackLayout>
             </Grid>
         </Border>
@@ -57,26 +48,6 @@
         <Setter Property="TextColor" Value="White"/>
     </Style>
 
-    <DataTemplate x:Key="TareasStyle">
-        <Frame BorderColor="Transparent">
-            <HorizontalStackLayout>
-                <CheckBox
-                    x:Name="checkBox"
-                    IsChecked="{Binding Acabada}"
-                    VerticalOptions="Center"
-                    />
-                <Label Text="{Binding NombreTarea}" VerticalOptions="Center">
-                    <Label.Triggers>
-                        <DataTrigger
-                            Binding="{Binding Source={x:Reference checkBox}, Path=IsChecked}"
-                            TargetType="Label"
-                            Value="True">
-                            <Setter Property="TextDecorations" Value="Strikethrough" />
-                        </DataTrigger>
-                    </Label.Triggers>
-                </Label>
-            </HorizontalStackLayout>
-        </Frame>
-    </DataTemplate>
+    
 
 </ResourceDictionary>

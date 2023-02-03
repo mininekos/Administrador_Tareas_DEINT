@@ -10,9 +10,10 @@ namespace Administrador_Tareas_DEINT.MVVM.Model
     [AddINotifyPropertyChangedInterface]
     class Categoria
     {
-
         public string Nombre{ get; set; }
-        public List<Tarea> Tareas{ get; set; }
         public int Id { get; set; }
+        public double ContadorSinAcabar { get; set; }
+        public double ContadorTotal { get; set; }
+        public double Progress { get; set; }
     }
 }

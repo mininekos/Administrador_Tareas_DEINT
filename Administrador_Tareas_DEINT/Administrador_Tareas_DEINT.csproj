@@ -53,9 +53,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="MVVM\Views\AgregarCategoria.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="MVVM\Views\AgregarTarea.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

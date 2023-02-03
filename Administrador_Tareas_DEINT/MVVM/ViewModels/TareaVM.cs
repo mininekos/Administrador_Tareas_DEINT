@@ -15,7 +15,6 @@ namespace Administrador_Tareas_DEINT.MVVM.ViewModels
         public TareaVM() {
             
             Categorias=new ObservableCollection<Categoria>() { 
-            
                 new Categoria{ 
                     Nombre="Curso .NET MAUI",
                     Id=0,
@@ -28,11 +27,9 @@ namespace Administrador_Tareas_DEINT.MVVM.ViewModels
                     Nombre="Compras",
                     Id=2,
                 }
-
             };
 
             Tareas = new ObservableCollection<Tarea>() {
-
                 new Tarea { 
                     NombreTarea="Actualizar Fichero",
                     Acabada=false,
@@ -46,21 +43,31 @@ namespace Administrador_Tareas_DEINT.MVVM.ViewModels
                 new Tarea {
                     NombreTarea="ASP.NET en YouTube",
                     Acabada=false,
-                    Id_Categoria=0
+                    Id_Categoria=1
                 },
                 new Tarea {
                     NombreTarea="XAML",
                     Acabada=false,
-                    Id_Categoria=0
+                    Id_Categoria=1
                 },
                 new Tarea {
                     NombreTarea="JavaScript",
                     Acabada=false,
-                    Id_Categoria=0
+                    Id_Categoria=1
                 },
-
             };
 
+            asignarTareas();
+        }
+
+        public void asignarTareas() { 
+        
+            foreach (var categoria in Categorias) {
+            
+                categoria.ContadorSinAcabar = Tareas.Where(t=> t.Id_Categoria==categoria.Id && !t.Acabada).ToList().Count();
+                categoria.ContadorTotal = Tareas.Where(t=> t.Id_Categoria==categoria.Id).ToList().Count();
+                categoria.Progress = ((categoria.ContadorTotal- categoria.ContadorSinAcabar) / categoria.ContadorTotal);
+            }
         
         }
     }
