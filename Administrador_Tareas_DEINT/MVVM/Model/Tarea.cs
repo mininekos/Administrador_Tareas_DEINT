@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Administrador_Tareas_DEINT.MVVM.Model
 {
     [AddINotifyPropertyChangedInterface]
-    class Tarea
+    public class Tarea
     {
         public string NombreTarea { get; set; }
         public bool Acabada{ get; set; }

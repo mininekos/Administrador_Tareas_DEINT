@@ -34,7 +34,7 @@
                         <Frame BorderColor="Transparent" BackgroundColor="White">
                             <HorizontalStackLayout>
                                 <CheckBox x:Name="checkBox" IsChecked="{Binding Acabada}" VerticalOptions="Center" 
-                          CheckedChanged="checkBox_CheckedChanged"/>
+                            CheckedChanged="checkBox_CheckedChanged"/>
                                 <Label Text="{Binding NombreTarea}" VerticalOptions="Center" TextColor="Black">
                                     <Label.Triggers>
                                         <DataTrigger
